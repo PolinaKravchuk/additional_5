@@ -78,7 +78,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 		if (arr[i] == '|' && pr % 2 == 0) {
 			if (mass.indexOf(arr[i]) != -1){
 				
-				for (var j = i; j < arr.length; j++){
+				for (var j = i + 1; j < arr.length; j++){
 
 					if (arr[j] == ']' && arrSKobka.indexOf(j) == -1) return false;
 
