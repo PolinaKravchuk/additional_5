@@ -190,6 +190,32 @@ for (var i = arr.length - 1; i >= 0; i--){
 			else return false;
 		}
 
+		if (arr[i] == '8' && vosem % 2 == 0) {
+			if (mass.indexOf(arr[i]) != -1){
+				vosem++;
+				for (var j = i + 1; j < arr.length; j++){
+
+					if (arr[j] == '2' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '4' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '6' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '8' && arrSKobka.indexOf(j) == -1) {
+						arrSKobka.push(i);
+						arrSKobka.push(j);
+						break;
+					}
+				}
+			} else return false;
+		}
+
+		if(arr[i] == '8' && vosem % 2 != 0 && arrSKobka.indexOf(i) == -1){
+			if (mass.indexOf(arr[i]) != -1)
+				vosem++;
+			else return false;
+		}
+
 }
 
 if (arrSKobka.length == arr.length) 
