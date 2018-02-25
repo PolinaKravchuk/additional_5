@@ -95,11 +95,10 @@ for (var i = arr.length - 1; i >= 0; i--){
 			} else return false;
 		}
 
-		
+
 		if (arr[i] == '|' && pr % 2 != 0) {
 			//pozicia = i;
 			pr++;
-			continue;
 		}
 
 }
