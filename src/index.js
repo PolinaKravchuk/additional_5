@@ -27,9 +27,27 @@ function check(str, bracketsConfig) {
 	}*/
 	var arrSKobka= [];
 	for (var i = arr.length - 1; i >= 0; i--){
+
 		if (arr[i] == '(') {
 			if (mass.indexOf(arr[i]) != -1){
+
 				for (var j = i; j < arr.length; j++){
+
+					if (arr[j] == ']' ) return false;
+
+					if (arr[i] == '[') {
+						if (mass.indexOf(arr[i]) != -1){
+							for (var j = i; j < arr.length; j++){
+								if (arr[j] == ']' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
+									arrSKobka.push(i);
+									arrSKobka.push(j);
+									break;
+								}
+								if (arr[j] == ')' ) return false;
+							}
+						} else return false;
+					}
+
 					if (arr[j] == ')' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
 						arrSKobka.push(j);
@@ -38,9 +56,25 @@ function check(str, bracketsConfig) {
 				}
 			} else return false;
 		} 
+
 		if (arr[i] == '[') {
 			if (mass.indexOf(arr[i]) != -1){
 				for (var j = i; j < arr.length; j++){
+					if (arr[j] == ')' ) return false;
+
+					if (arr[i] == '(') {
+						if (mass.indexOf(arr[i]) != -1){
+							for (var j = i; j < arr.length; j++){
+								if (arr[j] == ')' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
+									arrSKobka.push(i);
+									arrSKobka.push(j);
+									break;
+								}
+								if (arr[j] == ']' ) return false;
+							}
+						} else return false;
+					}
+
 					if (arr[j] == ']' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
 						arrSKobka.push(j);
@@ -49,7 +83,7 @@ function check(str, bracketsConfig) {
 				}
 			} else return false;
 		} 
-		if (arr[i] == '{') {
+		/*if (arr[i] == '{') {
 			if (mass.indexOf(arr[i]) != -1){
 				for (var j = i; j < arr.length; j++){
 					if (arr[j] == '}' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
@@ -59,8 +93,8 @@ function check(str, bracketsConfig) {
 					}
 				}
 			} else return false;
-		}
-		
+		}*/
+
 	}
 
 	if (arrSKobka.length == arr.length) 
