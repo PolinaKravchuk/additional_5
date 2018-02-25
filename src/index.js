@@ -26,7 +26,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == '}' && arrSKobka.indexOf(j) == -1) return false;
 
-					
+					if (arr[j] == '|' && arrSKobka.indexOf(j) == -1) return false;
 
 					if (arr[j] == ')' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
@@ -45,7 +45,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == '}' && arrSKobka.indexOf(j) == -1) return false;
 
-					
+					if (arr[j] == '|' && arrSKobka.indexOf(j) == -1) return false;
 
 					if (arr[j] == ']' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
@@ -64,7 +64,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == ')' && arrSKobka.indexOf(j) == -1) return false;
 
-					
+					if (arr[j] == '|' && arrSKobka.indexOf(j) == -1) return false;
 
 					if (arr[j] == '}' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
