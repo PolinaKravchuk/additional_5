@@ -7,8 +7,8 @@ function check(str, bracketsConfig) {
 		clCirculArr = 0;
 
 	var arr =  str.split('');
-	console.log('arr ');
-	console.log(arr);
+	/*console.log('arr ');
+	console.log(arr);*/
 
   for (var i = 0; i < bracketsConfig.length; i++){
   	var row = bracketsConfig[i];
@@ -17,8 +17,8 @@ function check(str, bracketsConfig) {
   		mass.push(column);
   	}
   }
-  console.log('mass ');
-  console.log(mass);
+  /*console.log('mass ');
+  console.log(mass);*/
 	/*for (var i = 0; i < mass.length; i++){
 		if (mass[i] == '(')
 			opCircul ++;
@@ -37,13 +37,13 @@ function check(str, bracketsConfig) {
 						break;
 					}
 				}
-			} else console.log('false - net "(" v mass');
+			} else return false;
 		} 
 	}
 
 	if (arrSKobka.length == arr.length) 
-		console.log('true - vse skobki zapisani');
-	else console.log('false-error');
+		return true;
+	else return false;
 	/*var k = 0;
 	if (arr.length % 2 == 0 && opCirculArr == clCirculArr) {
 		for (var i = 0; i < arr.length; i++){
