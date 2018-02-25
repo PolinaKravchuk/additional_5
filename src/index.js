@@ -33,9 +33,9 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 				for (var j = i; j < arr.length; j++){
 
-					if (arr[j] == ']' ) return false;
+					if (arr[j] == ']' && arrSKobka.indexOf(j) == -1) return false;
 
-					if (arr[j] == '}' ) return false;
+					if (arr[j] == '}' && arrSKobka.indexOf(j) == -1) return false;
 
 					/*if (arr[i] == '{') {
 						if (mass.indexOf(arr[i]) != -1){
