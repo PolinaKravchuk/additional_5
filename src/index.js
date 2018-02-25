@@ -37,7 +37,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == '}' ) return false;
 
-					if (arr[i] == '{') {
+					/*if (arr[i] == '{') {
 						if (mass.indexOf(arr[i]) != -1){
 							for (var j = i; j < arr.length; j++){
 								if (arr[j] == ']' ) return false;
@@ -66,7 +66,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 								if (arr[j] == '}' ) return false;
 							}
 						} else return false;
-					}
+					}*/
 
 					if (arr[j] == ')' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
@@ -85,7 +85,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == '}' ) return false;
 
-					if (arr[i] == '(') {
+					/*if (arr[i] == '(') {
 						if (mass.indexOf(arr[i]) != -1){
 							for (var j = i; j < arr.length; j++){
 
@@ -115,7 +115,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 								}
 							}
 						} else return false;
-					}
+					}*/
 
 					if (arr[j] == ']' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
@@ -133,7 +133,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == ')' ) return false;
 
-					if (arr[i] == '(') {
+					/*if (arr[i] == '(') {
 						if (mass.indexOf(arr[i]) != -1){
 							for (var j = i; j < arr.length; j++){
 
@@ -162,7 +162,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 								if (arr[j] == '}' ) return false;
 							}
 						} else return false;
-					}
+					}*/
 
 					if (arr[j] == '}' && mass.indexOf(arr[j]) != -1 && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
