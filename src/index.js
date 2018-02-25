@@ -77,7 +77,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 		if (arr[i] == '|' && pr % 2 == 0) {
 			if (mass.indexOf(arr[i]) != -1){
-				
+				pr++;
 				for (var j = i + 1; j < arr.length; j++){
 
 					if (arr[j] == ']' && arrSKobka.indexOf(j) == -1) return false;
@@ -96,7 +96,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 		}
 
 
-		if (arr[i] == '|' && pr % 2 != 0) {
+		if (arr[i] == '|' && pr % 2 != 0 && arrSKobka.indexOf(i) == -1) {
 			//pozicia = i;
 			pr++;
 		}
