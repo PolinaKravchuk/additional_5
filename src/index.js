@@ -184,7 +184,7 @@ for (var i = arr.length - 1; i >= 0; i--){
 			} else return false;
 		}
 
-		if(arr[i] == '7' sem % 2 != 0 && arrSKobka.indexOf(i) == -1){
+		if(arr[i] == '7' && sem % 2 != 0 && arrSKobka.indexOf(i) == -1){
 			if (mass.indexOf(arr[i]) != -1)
 				sem++;
 			else return false;
