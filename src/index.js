@@ -175,6 +175,8 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 					if (arr[j] == '6' && arrSKobka.indexOf(j) == -1) return false;
 
+					if (arr[j] == '8' && arrSKobka.indexOf(j) == -1 && vosem % 2 != 0) return false;
+
 					if (arr[j] == '7' && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
 						arrSKobka.push(j);
@@ -200,6 +202,8 @@ for (var i = arr.length - 1; i >= 0; i--){
 					if (arr[j] == '4' && arrSKobka.indexOf(j) == -1) return false;
 
 					if (arr[j] == '6' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '7' && arrSKobka.indexOf(j) == -1 && sem % 2 != 0) return false;
 
 					if (arr[j] == '8' && arrSKobka.indexOf(j) == -1) {
 						arrSKobka.push(i);
