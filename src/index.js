@@ -1,6 +1,8 @@
 module.exports = function check(str, bracketsConfig) {
 var mass = [], 
 	pr = 1,
+	sem = 1,
+	vosem = 1,
 	pozicia;
 
 var arr =  str.split('');
@@ -97,8 +99,9 @@ for (var i = arr.length - 1; i >= 0; i--){
 
 
 		if (arr[i] == '|' && pr % 2 != 0 && arrSKobka.indexOf(i) == -1) {
-			//pozicia = i;
-			pr++;
+			if (mass.indexOf(arr[i]) != -1)
+				pr++;
+			else return false;
 		}
 
 		if(arr[i] == '1'){
@@ -159,6 +162,32 @@ for (var i = arr.length - 1; i >= 0; i--){
 					}
 				}
 			}else return false;
+		}
+
+		if (arr[i] == '7' && sem % 2 == 0) {
+			if (mass.indexOf(arr[i]) != -1){
+				sem++;
+				for (var j = i + 1; j < arr.length; j++){
+
+					if (arr[j] == '2' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '4' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '6' && arrSKobka.indexOf(j) == -1) return false;
+
+					if (arr[j] == '7' && arrSKobka.indexOf(j) == -1) {
+						arrSKobka.push(i);
+						arrSKobka.push(j);
+						break;
+					}
+				}
+			} else return false;
+		}
+
+		if(arr[i] == '7' sem % 2 != 0 && arrSKobka.indexOf(i) == -1){
+			if (mass.indexOf(arr[i]) != -1)
+				sem++;
+			else return false;
 		}
 
 }
